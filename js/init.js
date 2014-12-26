@@ -124,6 +124,7 @@
 
 			if (settings.sectionTransitions) {
 
+
 				// Generic sections.
 					$('.main.style1')
 						.scrollwatch({
@@ -194,6 +195,7 @@
 		
 			// Change (skel).
 				skel.change(function() {
+					console.log("change")
 
 					// Force touch mode if we're in mobile.
 						if (skel.isActive('mobile'))

@@ -4,9 +4,10 @@
 	html5up.net | @n33co
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html>
+
+<html ng-app="lieApp">
 	<head>
-		<title>Big Picture by HTML5 UP</title>
+		<title>Imlie 104</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -17,15 +18,19 @@
 		<script src="js/jquery.scrollgress.min.js"></script>
 		<script src="js/skel.min.js"></script>
 		<script src="js/init.js"></script>
+		<script src="bower_components/angular/angular.js"></script>
+		<script src="bower_components/angular-animate/angular-animate.js"></script>
+		<script src="js/controller.js"></script>
 		<noscript>
 			<link rel="stylesheet" href="css/skel.css" />
 			<link rel="stylesheet" href="css/style.css" />
 			<link rel="stylesheet" href="css/style-wide.css" />
 			<link rel="stylesheet" href="css/style-normal.css" />
+			
 		</noscript>
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 	</head>
-	<body>
+	<body ng-controller="lieCtrl" >
 
 		<!-- Header -->
 			<!-- <header id="header">
@@ -60,75 +65,149 @@
 				</div>
 			</section>
 			<section id="one" class="main style1 dark fullscreen">
-				<div class="content container small">
+				<div class="content container small" ng-hide="showtruth">
 					<header>
-						<h2>沒差</h2>
+						<h2 ng-mousedown="changetruth()">沒差</h2>
 					</header>
 					<p>No difference.</p>
+
+				</div>
+				<div class="content container small" ng-show="showtruth" >
+					<header>
+						<h2 ng-mouseup="changetruth()">U n f r i e n d</h2>
+					</header>
+					<p>Unfriend.</p>
 
 				</div>
 				<a href="#two" class="button style2 down anchored">More</a>
 			</section>
 
 			<section id="two" class="main style1 dark fullscreen">
-				<div class="content container small">
+				<div class="content container small" ng-hide="showtruth" >
 					<header>
-						<h2>我已經習慣了</h2>
+						<h2 ng-mousedown="changetruth()">我已經習慣了</h2>
 					</header>
 					<p>I got used to it.</p>
+
+				</div>
+				<div class="content container small" ng-show="showtruth" >
+					<header>
+						<h2 ng-mouseup="changetruth()">U n f r i e n d</h2>
+					</header>
+					<p>Unfriend.</p>
 
 				</div>
 				<a href="#three" class="button style2 down anchored">More</a>
 			</section>
 
 			<section id="three" class="main style1 dark fullscreen">
-				<div class="content container small">
+				<div class="content container small" ng-hide="showtruth">
 					<header>
-						<h2>來學新技術</h2>
+						<h2 ng-mousedown="changetruth()">來學新技術</h2>
 					</header>
 					<p>Let's learn Laravel.</p>
+
+				</div>
+				<div class="content container small" ng-show="showtruth" >
+					<header>
+						<h2 ng-mouseup="changetruth()">去拍照抱歉</h2>
+					</header>
+					<p>I went to take photos.</p>
 
 				</div>
 				<a href="#four" class="button style2 down anchored">More</a>
 			</section>
 
 			<section id="four" class="main style1 dark fullscreen">
-				<div class="content container small">
+				<div class="content container small" ng-hide="showtruth">
 					<header>
-						<h2>我要用 C 寫</h2>
+						<h2 ng-mousedown="changetruth()">我要用 C 寫</h2>
 					</header>
 					<p>I will code with C.</p>
 					
+				</div>
+				<div class="content container small" ng-show="showtruth" >
+					<header>
+						<h2 ng-mouseup="changetruth()">P y 在臉上</h2>
+					</header>
+					<p>Py on the face.</p>
+
 				</div>
 				<a href="#five" class="button style2 down anchored">More</a>
 			</section>
 
 			<section id="five" class="main style1 dark fullscreen">
-				<div class="content container small">
+				<div class="content container small" ng-hide="showtruth">
 					<header>
-						<h2>我不喜歡 3D 遊戲</h2>
+						<h2 ng-mousedown="changetruth()">我不喜歡 3D 遊戲</h2>
 					</header>
 					<p>I don't like 3D games.</p>
+					
+				</div>
+				<div class="content container small" ng-show="showtruth" >
+					<header>
+						<h2 ng-mouseup="changetruth()">妹子跑掉，沒意思</h2>
+					</header>
+					<p>My lover has gone.</p>
+
 				</div>
 				<a href="#six" class="button style2 down anchored">More</a>
 			</section>
 
 			<section id="six" class="main style1 dark fullscreen">
-				<div class="content container small">
+				<img src="images/zoochong.jpg" style="position:absolute; top:10%; left: 35%; width:30%; opacity:0.1;" ng-show="showtruth" alt="">	
+				<div class="content container small" ng-hide="showtruth">
 					<header>
-						<h2>我學到教訓了</h2>
+						<h2 ng-mousedown="changetruth()">我學到教訓了</h2>
 					</header>
 					<p>I've learned a lesson.</p>
+					
 				</div>
+				<div class="content container small" ng-show="showtruth" >
+					<header>
+						<h2 ng-mouseup="changetruth()">露中</h2>
+					</header>
+					<p>LuChong.jpg</p>
+
+					
+
+				</div>
+
 				<a href="#seven" class="button style2 down anchored">More</a>
 			</section>
 
 			<section id="seven" class="main style1 dark fullscreen">
-				<div class="content container small">
+				<div class="content container small" ng-hide="showtruth">
 					<header>
-						<h2>都陳彥求教的</h2>
+						<h2 ng-mousedown="changetruth()">都陳彥求教的</h2>
 					</header>
 					<p>Ball taught me.</p>
+					
+				</div>
+				<div class="content container small" ng-show="showtruth" >
+					<header>
+						<h2 ng-mouseup="changetruth()">ㄜㄜ！祖！！</h2>
+					</header>
+					<p>UhUh!Zooooo!!!!!</p>
+
+				</div>
+				<a href="#eight" class="button style2 down anchored">More</a>
+			</section>
+
+			<section id="eight" class="main style1 dark fullscreen">
+				<div class="content container small" ng-hide="showtruth">
+					<header>
+						<h2 ng-mousedown="changetruth()">我有女朋友</h2>
+					</header>
+					<p>I had a girl friend.</p>
+					
+				</div>
+				<div class="content container small" ng-show="showtruth" >
+					<header>
+						<h2 ng-mouseup="changetruth()">夢醒了嗎？</h2>
+					</header>
+					<p>Nice dream, huh?</p>
+
 				</div>
 				<a href="#contact" class="button style2 down anchored">More</a>
 			</section>
